@@ -3,10 +3,20 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './components/shared/header/header.component';
+import { FooterComponent } from './components/shared/footer/footer.component';
+import { MenuComponent } from './components/shared/menu/menu.component';
+import { SettingsComponent } from './components/shared/settings/settings.component';
+import { ContentComponent } from './components/shared/content/content.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    FooterComponent,
+    MenuComponent,
+    SettingsComponent,
+    ContentComponent
   ],
   imports: [
     BrowserModule,
