@@ -14,6 +14,9 @@ import { RecuteProcessComponent } from './recute-process/recute-process.componen
 import { DepartementComponent } from './departement/departement.component';
 import { ManagersComponent } from './managers/managers.component';
 import { PositionsComponent } from './positions/positions.component';
+import { LoginComponent } from './login/login.component';
+import { EmailTemplateComponent } from './email-template/email-template.component';
+
 
 @NgModule({
   declarations: [
@@ -28,11 +31,14 @@ import { PositionsComponent } from './positions/positions.component';
     RecuteProcessComponent,
     DepartementComponent,
     ManagersComponent,
-    PositionsComponent
+    PositionsComponent,
+    LoginComponent,
+    EmailTemplateComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

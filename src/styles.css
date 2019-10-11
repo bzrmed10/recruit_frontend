@@ -1,1 +1,53 @@
-/* You can add global styles to this file, and also import other style files */
+/* tr.even {
+    height: 80px;
+    border: initial;
+    background: #fff;
+    border-radius: calc(.15rem - 1px);
+    box-shadow: 0 1px 15px rgba(0,0,0,.04), 0 1px 6px rgba(0,0,0,.04);
+    
+}
+tr.odd {
+    height: 80px;
+    border: initial;
+    background: #fff;
+    border-radius: calc(.15rem - 1px);
+    box-shadow: 0 1px 15px rgba(0,0,0,.04), 0 1px 6px rgba(0,0,0,.04);
+    
+}
+
+
+table.dataTable {
+    clear: both;
+    margin-top: 6px !important;
+    margin-bottom: 6px !important;
+    max-width: none !important;
+    border-collapse: separate !important;
+    border-spacing: 0 15px;
+}
+
+
+.table td, .table th {
+    padding: 1.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+
+
+.pagination > li > a, .pagination > li > span {
+    background-color: transparent;
+    border-radius: 50%;
+    margin-left: 5px;
+    margin-right: 5px;
+    color: #145388;
+}
+
+.page-item.active .page-link {
+    z-index: 1;
+    border-color: #145388;
+    border-radius: 50%;
+}
+
+
+.dataTables_wrapper table thead{
+    display:none;
+} */

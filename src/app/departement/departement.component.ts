@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./departement.component.css']
 })
 export class DepartementComponent implements OnInit {
-
+ title ="Departement";
   constructor() { }
 
   ngOnInit() {
