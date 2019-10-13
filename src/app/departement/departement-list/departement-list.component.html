@@ -1,0 +1,16 @@
+<table id="departement" class="table table">
+    <thead>
+       <tr>
+          <th style="width: 10%;">Action</th>
+          <th>Departement Name</th> 
+          <th>Number of employes</th>                        
+       </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let departement of departements">                            
+          <td><i class="glyph-icon simple-icon-pencil color-green" [routerLink]="[departement.id,'edit']"></i>   <i class="glyph-icon simple-icon-trash color-red"></i></td>
+          <td>{{ departement.nameDep }}</td>
+          <td><small class="badge badge-primary"><i class="far fa-user"></i> {{ departement.nbEmploye }}</small></td>
+       </tr>
+    </tbody>
+ </table>

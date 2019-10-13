@@ -1,4 +1,4 @@
-/* tr.even {
+ /* tr.even {
     height: 80px;
     border: initial;
     background: #fff;
@@ -15,7 +15,24 @@ tr.odd {
     
 }
 
+.table td, .table th {
+    padding: 1.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+table.dataTable {
+    clear: both;
+    margin-top: 6px !important;
+    margin-bottom: 6px !important;
+    max-width: none !important;
+    border-collapse: separate !important;
+    border-spacing: 0 15px;
+}
+.dataTables_wrapper table thead{
+    display:none;
+}  */
 
+/*
 table.dataTable {
     clear: both;
     margin-top: 6px !important;
@@ -26,11 +43,6 @@ table.dataTable {
 }
 
 
-.table td, .table th {
-    padding: 1.75rem;
-    vertical-align: top;
-    border-top: 1px solid #dee2e6;
-}
 
 
 .pagination > li > a, .pagination > li > span {
@@ -51,3 +63,54 @@ table.dataTable {
 .dataTables_wrapper table thead{
     display:none;
 } */
+
+.container-fluid {
+    width: 100%;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.card {
+    box-shadow: none;
+}
+.card:hover {
+    box-shadow: 0 0 25px -5px #9e9c9e;
+ 
+}
+td>i.glyph-icon {
+    margin-left: 5PX;
+    margin-right: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+.class-options {
+    font-size: 25px;
+    margin-left: 5PX;
+    margin-right: 5px;
+    cursor: pointer;
+}
+.card-header>.card-tools {
+    top: 0.8rem;
+}
+.color-red {
+    color: #ff5370;
+}
+
+.color-green{
+    color: #1de9b6 ;
+}
+.color-purpel{
+    color : #a389d4;
+}
+.color-blue{
+    color : #00bcd4;
+}
+.color-yellow{
+    color:#ffb64d;
+}
+.badge-primary {
+    color: #fff;
+    background-color: #6d85dcd4;
+}

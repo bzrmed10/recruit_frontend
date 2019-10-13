@@ -1,0 +1,42 @@
+<form (ngSubmit) ="onSubmit(f)" #f="ngForm">
+        <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="departement-name">Departement Name</label>
+                        <input 
+                        type="text" 
+                        class="form-control" 
+                        id="nameDep" 
+                        name="nameDep" 
+                        ngModel
+                        required
+                        [ngClass]="{'is-invalid': !f.valid && f.touched}">
+                      </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="nb-employe">Number of employes</label>
+                        <input 
+                        type="number"
+                        class="form-control" 
+                        id="nbEmploye" 
+                        name="nbEmploye" 
+                        ngModel
+                        required
+                        pattern="^[1-9]+[0-9]*$"
+                        [ngClass]="{'is-invalid': !f.valid && f.touched }">
+                      </div>
+                </div>
+                <div class="col-5">
+            
+                </div>
+                <div class="col-2">
+                    <button class="form-control" type="submit" [disabled]="!f.valid"><i class="fas fa-plus"></i>{{ editMode ? ' Edit' : ' Add'}}</button>
+                </div>
+                <div class="col-5">
+                    
+                    </div>
+            </div>
+</form>
+
+

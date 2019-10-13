@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +17,8 @@ import { ManagersComponent } from './managers/managers.component';
 import { PositionsComponent } from './positions/positions.component';
 import { LoginComponent } from './login/login.component';
 import { EmailTemplateComponent } from './email-template/email-template.component';
+import { DepartementListComponent } from './departement/departement-list/departement-list.component';
+import { DepartementEditComponent } from './departement/departement-edit/departement-edit.component';
 
 
 @NgModule({
@@ -33,11 +36,14 @@ import { EmailTemplateComponent } from './email-template/email-template.componen
     ManagersComponent,
     PositionsComponent,
     LoginComponent,
-    EmailTemplateComponent
+    EmailTemplateComponent,
+    DepartementListComponent,
+    DepartementEditComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
     
   ],
   providers: [],

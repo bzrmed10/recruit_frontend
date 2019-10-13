@@ -1,0 +1,15 @@
+[class*=sidebar-dark-] {
+    background-color: #3f4d67;
+}
+
+.sidebar-dark-primary .nav-sidebar>.nav-item>.nav-link.active,
+ .sidebar-light-primary .nav-sidebar>.nav-item>.nav-link.active {
+     background: linear-gradient(-135deg,#1de9b6 0,#1dc4e9 100%);
+ }
+
+ [class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link.active, 
+ [class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link.active:focus,
+  [class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link.active:hover {
+    background : linear-gradient(-135deg,#899fd4 0,#a389d4 100%);
+    color: aliceblue;
+ }
