@@ -9,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class DepartementComponent implements OnInit {
  title ="Departements";
  showList = true;
+ showNew = false;
+ showEdit = false;
 
   constructor() { }
 
@@ -18,8 +20,11 @@ export class DepartementComponent implements OnInit {
   
   onList(){
     this.showList = true;
+    this.showNew = false;
   }
   onNew(){
-    this.showList =false;
+    this.showNew =true;
+    this.showList = false;
+
   }
 }

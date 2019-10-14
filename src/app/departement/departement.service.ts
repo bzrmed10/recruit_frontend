@@ -7,10 +7,10 @@ import { Departement } from './departement.model';
 export class DepartementService {
 
   private departements : Departement[] = [
-    new Departement(1,"Marketing",23),
-    new Departement(2,"It",12),
-    new Departement(3,"Finance",5),
-    new Departement(4,"Manegement",9)
+    new Departement("Marketing",23),
+    new Departement("It",12),
+    new Departement("Finance",5),
+    new Departement("Manegement",9)
   ]
 
   constructor() { }
@@ -20,7 +20,18 @@ export class DepartementService {
   }
 
   addDepartement(departement : Departement){
-    departement["id"] = 6;
     this.departements.push(departement);
-  } 
+  }
+  editDepartement(id : number,newDepartement : Departement){
+    this.departements[id] = newDepartement;
+  
+  }
+  
+  deleteDepartement(id : number){
+    this.departements.splice(id,1);
+  }
+  getDepartementById(index : number){
+    return this.departements[index];
+  }
+
 }
