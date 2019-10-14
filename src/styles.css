@@ -114,3 +114,14 @@ td>i.glyph-icon {
     color: #fff;
     background-color: #6d85dcd4;
 }
+
+.control-sidebar-dark {
+    background: #3f4d67;
+}
+
+i.far.glyph-icon {
+    margin-right: 5px;
+}
+i.fas.glyph-icon {
+    margin-right: 5px;
+}

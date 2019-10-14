@@ -7,7 +7,7 @@
                     <h3 class="card-title">{{ title }}</h3>
                     <div class="card-tools">
                         <a class="glyph-icon simple-icon-plus color-blue class-options" routerLink="new" (click)="onNew()" *ngIf="showList"></a>
-                        <a class="glyph-icon simple-icon-list color-blue class-options" routerLink="/departement" (click)="onList()" *ngIf="!showList"></a>
+                        <a class="glyph-icon simple-icon-list color-blue class-options" routerLink="/departement" (click)="onList()" *ngIf="showNew"></a>
                       </div>
                    </div>
                 <!-- /.card-header -->

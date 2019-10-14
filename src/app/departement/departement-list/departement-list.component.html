@@ -7,10 +7,11 @@
        </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let departement of departements">                            
-          <td><i class="glyph-icon simple-icon-pencil color-green" [routerLink]="[departement.id,'edit']"></i>   <i class="glyph-icon simple-icon-trash color-red"></i></td>
-          <td>{{ departement.nameDep }}</td>
-          <td><small class="badge badge-primary"><i class="far fa-user"></i> {{ departement.nbEmploye }}</small></td>
+    <tr *ngFor="let dep of departements , let i = index">                            
+          <td><i class="glyph-icon simple-icon-pencil color-green" [routerLink]="[i,'edit']"></i>   
+            <i class="glyph-icon simple-icon-trash color-red" (click)="onDeleteDepartement(i)"></i></td>
+          <td>{{ dep.nameDep }}</td>
+          <td><small class="badge badge-primary"><i class="far fa-user"></i> {{ dep.nbEmploye }}</small></td>
        </tr>
     </tbody>
  </table>
