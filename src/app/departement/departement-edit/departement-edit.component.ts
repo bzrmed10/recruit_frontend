@@ -36,7 +36,7 @@ export class DepartementEditComponent implements OnInit {
       if(!this.editMode){
         console.log(form.value);
          this.departementService.addDepartement(form.value);
-        this.router.navigate(['departement']);
+         this.router.navigate(['departement']);
           
       }
   }
