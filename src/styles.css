@@ -125,3 +125,23 @@ i.far.glyph-icon {
 i.fas.glyph-icon {
     margin-right: 5px;
 }
+.badge-light-success{
+    background: rgba(46,216,182,.2);
+    border-color: #c4f4eb;
+    color: #2ed8b6;
+}
+.badge-light-danger{
+    background: rgba(255,83,112,.2);
+    border-color: #ffcfd7;
+    color: #ff5370
+}
+.glyph-icon.iconsmind-Phone-2 {
+    font-size: 23px;
+}
+.glyph-icon.iconsmind-Mail-Add {
+    font-size: 23px;
+}
+
+.center { 
+    text-align: center; 
+}

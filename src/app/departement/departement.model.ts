@@ -1,3 +1,3 @@
 export class Departement {
-    constructor ( public nameDep : string , public nbEmploye : number){}
+    constructor ( public nameDep : string , public nbEmploye : number ){}
 }

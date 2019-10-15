@@ -1,0 +1,28 @@
+<table id="managers" class="table table">
+        <thead>
+           <tr>
+              <th style="width: 10%;">Action</th>
+              <th>First Name</th> 
+              <th>Last Name</th>                        
+              <th>Email</th>                        
+              <th>Phone</th>                        
+              <th>Departement</th>                        
+              <th>Status</th>                        
+           </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let manager of managers , let i = index">                            
+              <td><i class="glyph-icon simple-icon-pencil color-green" [routerLink]="[i,'edit']"></i>   
+                <i class="glyph-icon simple-icon-trash color-red" (click)="onDeleteManager(i)"></i></td>
+              <td>{{ manager.firstName }}</td>
+              <td>{{ manager.lastName }}</td>
+              <td>{{ manager.email }}</td>
+              <td>{{ manager.phone }}</td>
+              <td>IT</td>
+              <td><small class="badge" 
+                [ngClass]="{'badge-light-success': manager.status =='Active', 
+                            'badge-light-danger': manager.status =='Disabled'}">
+                   {{ manager.status }}</small></td>
+           </tr>
+        </tbody>
+     </table>

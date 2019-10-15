@@ -13,17 +13,17 @@ export class DepartementListComponent implements OnInit {
   departements : Departement[];
    
   editMode : boolean;
-  constructor(private departementServive : DepartementService,
+  constructor(private departementService : DepartementService,
     private sharedSercice : SharedService) { }
 
   ngOnInit() {
-    this.departements = this.departementServive.getDepartement();
+    this.departements = this.departementService.getDepartement();
     
   }
 
   onDeleteDepartement(id : number){
-    console.log(id);
-    this.departementServive.deleteDepartement(id);
+    
+    this.departementService.deleteDepartement(id);
     this.sharedSercice.successToast('successful deletion');
   }
 }

@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +19,8 @@ import { LoginComponent } from './login/login.component';
 import { EmailTemplateComponent } from './email-template/email-template.component';
 import { DepartementListComponent } from './departement/departement-list/departement-list.component';
 import { DepartementEditComponent } from './departement/departement-edit/departement-edit.component';
+import { ManagersListComponent } from './managers/managers-list/managers-list.component';
+import { ManagersEditComponent } from './managers/managers-edit/managers-edit.component';
 
 
 @NgModule({
@@ -38,12 +40,15 @@ import { DepartementEditComponent } from './departement/departement-edit/departe
     LoginComponent,
     EmailTemplateComponent,
     DepartementListComponent,
-    DepartementEditComponent
+    DepartementEditComponent,
+    ManagersListComponent,
+    ManagersEditComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
     
   ],
   providers: [],

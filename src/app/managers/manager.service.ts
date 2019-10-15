@@ -8,10 +8,10 @@ export class ManagerService {
 
   private managers : Manager[] = [
 
-    new Manager("Mehdi" ,"Bouazar" ,"bouazar.mehdi@gmail.com" ),
-    new Manager("manager firstName" ,"manager lastname" ,"manager@gmail.com" ),
-    new Manager("manager2 firstName" ,"manager2 lastname" ,"manager2@gmail.com" ),
-    new Manager("manager3 firstName" ,"manager3 lastname" ,"manager@gmail.com" ),
+    new Manager("Mehdi" ,"Bouazar" ,"bouazar.mehdi@gmail.com","Active","+21264987452" ),
+    new Manager("manager firstName" ,"manager lastname" ,"manager@gmail.com" ,"Active","+21278956234"),
+    new Manager("manager2 firstName" ,"manager2 lastname" ,"manager2@gmail.com","Disabled" ,"+21245957832"),
+    new Manager("manager3 firstName" ,"manager3 lastname" ,"manager@gmail.com","Active" ,"+21278963245"),
   ];
   constructor() { }
 
@@ -20,6 +20,7 @@ export class ManagerService {
   }
 
   addManager(manager : Manager){
+    console.log(manager);
     this.managers.push(manager);
   }
   editManager(id : number,newManager : Manager){

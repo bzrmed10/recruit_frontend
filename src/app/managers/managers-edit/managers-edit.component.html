@@ -1,0 +1,87 @@
+<form [formGroup] ="managerForm" (ngSubmit)="onSubmit()">
+
+        <div class="row">
+            <div class="col-md-6 col-sm-12">
+               <div class="form-group">
+                   <label for="firstName">First Name</label>
+                   <input type="text" id="firstName" class="form-control" formControlName="firstName" >
+               </div>
+            </div>
+      
+            <div class="col-md-6 col-sm-12">
+               <div class="form-group">
+                   <label for="lastName">Last Name</label>
+                   <input type="text" id="lastName" class="form-control" formControlName="lastName">
+               </div>
+            </div>
+        </div>
+ 
+        <div class="row">
+            <div class="col-md-6 col-sm-12">
+               <div class="form-group">
+                   <label for="email">Email</label>
+                   <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                                <div class="input-group-prepend">
+                                        <span class="input-group-text"><div class="glyph">
+                                             <div class="glyph-icon iconsmind-Mail-Add"></div>
+                                             </div></span>
+                                      </div>
+                        </div>
+                        <input type="text" class="form-control" formControlName="email">
+                      </div>
+               </div>
+               
+            </div>
+            <div class="col-md-6 col-sm-12">
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <div class="input-group mb-3">
+                             <div class="input-group-prepend">
+                               <span class="input-group-text"><div class="glyph">
+                                    <div class="glyph-icon iconsmind-Phone-2"></div>
+                                    </div></span>
+                             </div>
+                             <input type="text" class="form-control"  formControlName="phone">
+                           </div>
+                    </div>
+                    
+                 </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 col-sm-12">
+                    <label for="departement">Departement</label>
+                    <select class="form-control" name="departement" id="departement" formControlName="departement">
+                            <option value="100" disabled selected>choose Departement</option>    
+                        <option [value]="i" *ngFor="let departement of departements ;let i = index">{{ departement.nameDep }}</option>
+                            
+                        </select>
+                        
+            </div>
+            <div class="col-md-3 col-sm-12">
+                    <label for="status">Status</label>
+                    <select class="form-control" name="status" id="status" formControlName="status">
+                            <option value="" disabled selected>choose Status</option>
+                            <option value="Active">Active</option>
+                            <option value="Disabled">Disabled</option>
+                            
+                        </select>
+                </div>
+                
+        </div>
+        <div class="card-footer" style="background-color: white;">
+            <div class="row">
+                    <div class="col-md-5">
+                    </div>
+                    <div class="col-md-2 col-sm-12">
+                        <button class="form-control" type="submit" [disabled]="!managerForm.valid" >
+                            <i class="fas fa-plus"></i> {{ editMode ? ' Edit' : ' Add'}}</button>
+                    </div>
+            </div>
+     
+               
+        </div>
+
+        
+    </form>

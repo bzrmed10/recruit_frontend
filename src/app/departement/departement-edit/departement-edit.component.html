@@ -1,6 +1,6 @@
 <form (ngSubmit) ="onSubmit(f)" #f="ngForm">
         <div class="row">
-                <div class="col-6">
+                <div class="col-md-6">
                     <div class="form-group">
                         <label for="departement-name">Departement Name</label>
                         <input 
@@ -14,7 +14,7 @@
                         [ngClass]="{'is-invalid': !nameDep.valid && nameDep.touched  , 'is-valid' : nameDep.valid && nameDep.touched }">
                       </div>
                 </div>
-                <div class="col-6">
+                <div class="col-md-6">
                     <div class="form-group">
                         <label for="nb-employe">Number of employes</label>
                         <input 
@@ -29,13 +29,13 @@
                         [ngClass]="{'is-invalid': !nbEmploye.valid && nbEmploye.touched , 'is-valid' : nbEmploye.valid && nbEmploye.touched}">
                       </div>
                 </div>
-                <div class="col-5">
+                <div class="col-md-5">
             
                 </div>
-                <div class="col-2">
+                <div class="col-md-2">
                     <button class="form-control" type="submit" [disabled]="!f.valid"><i class="fas fa-plus"></i>{{ editMode ? ' Edit' : ' Add'}}</button>
                 </div>
-                <div class="col-5">
+                <div class="col-md-5">
                     
                     </div>
             </div>
