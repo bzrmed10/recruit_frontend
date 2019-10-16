@@ -1,17 +1,26 @@
-<form [formGroup] ="managerForm" (ngSubmit)="onSubmit()">
+<form [formGroup] ="managerForm" (ngSubmit)="onSubmit()" >
 
         <div class="row">
             <div class="col-md-6 col-sm-12">
                <div class="form-group">
                    <label for="firstName">First Name</label>
-                   <input type="text" id="firstName" class="form-control" formControlName="firstName" >
+                   <input 
+                   type="text" 
+                   id="firstName" 
+                   class="form-control" 
+                   formControlName="firstName" 
+                   [ngClass]="{'is-invalid': managerForm.controls.firstName.invalid &&  managerForm.controls.firstName.touched}">
                </div>
             </div>
       
             <div class="col-md-6 col-sm-12">
                <div class="form-group">
                    <label for="lastName">Last Name</label>
-                   <input type="text" id="lastName" class="form-control" formControlName="lastName">
+                   <input type="text"
+                          id="lastName" 
+                          class="form-control" 
+                          formControlName="lastName"
+                          [ngClass]="{'is-invalid': managerForm.controls.lastName.invalid &&  managerForm.controls.lastName.touched}">
                </div>
             </div>
         </div>
@@ -28,7 +37,10 @@
                                              </div></span>
                                       </div>
                         </div>
-                        <input type="text" class="form-control" formControlName="email">
+                        <input type="text"
+                               class="form-control" 
+                               formControlName="email"
+                               [ngClass]="{'is-invalid': managerForm.controls.email.invalid &&  managerForm.controls.email.touched}">
                       </div>
                </div>
                
@@ -42,7 +54,11 @@
                                     <div class="glyph-icon iconsmind-Phone-2"></div>
                                     </div></span>
                              </div>
-                             <input type="text" class="form-control"  formControlName="phone">
+                             <input 
+                                type="text"
+                                class="form-control"  
+                                formControlName="phone"
+                                [ngClass]="{'is-invalid': managerForm.controls.phone.invalid &&  managerForm.controls.phone.touched}">
                            </div>
                     </div>
                     
@@ -52,7 +68,11 @@
         <div class="row">
             <div class="col-md-6 col-sm-12">
                     <label for="departement">Departement</label>
-                    <select class="form-control" name="departement" id="departement" formControlName="departement">
+                    <select class="form-control" 
+                            name="departement" 
+                            id="departement" 
+                            formControlName="departement"
+                            [ngClass]="{'is-invalid': managerForm.controls.departement.invalid &&  managerForm.controls.departement.touched}">
                             <option value="100" disabled selected>choose Departement</option>    
                         <option [value]="i" *ngFor="let departement of departements ;let i = index">{{ departement.nameDep }}</option>
                             
@@ -61,7 +81,11 @@
             </div>
             <div class="col-md-3 col-sm-12">
                     <label for="status">Status</label>
-                    <select class="form-control" name="status" id="status" formControlName="status">
+                    <select class="form-control" 
+                            name="status" 
+                            id="status" 
+                            formControlName="status"
+                            [ngClass]="{'is-invalid': managerForm.controls.status.invalid &&  managerForm.controls.status.touched}">
                             <option value="" disabled selected>choose Status</option>
                             <option value="Active">Active</option>
                             <option value="Disabled">Disabled</option>

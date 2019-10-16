@@ -145,3 +145,75 @@ i.fas.glyph-icon {
 .center { 
     text-align: center; 
 }
+
+
+
+
+i.nav-icon.glyph-icon.iconsmind-Optimization {
+    font-size: 25px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+
+i.nav-icon.glyph-icon.iconsmind-Gears {
+    font-size: 25px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+i.nav-icon.glyph-icon.iconsmind-ID-3{
+    font-size: 25px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+i.fas.glyph-icon.iconsmind-MaleFemale{
+    font-size: 25px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+i.nav-icon.glyph-icon.iconsmind-Management{
+    font-size: 25px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+i.far.glyph-icon.iconsmind-Mail-Read{
+    font-size: 25px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+i.nav-icon.glyph-icon.iconsmind-Numbering-List{
+    font-size: 25px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+i.nav-icon.glyph-icon.glyph-icon.iconsmind-Calendar-4{
+    font-size: 25px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+i.nav-icon.glyph-icon.iconsmind-Power-2.text-danger{
+    font-size: 25px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+
+.main-sidebar, .main-sidebar::before {
+    
+    width: 260px;
+}
+
+.nav {
+    flex-wrap: unset;
+}
+
+
+.ck-editor__editable_inline {
+    min-height: 300px;
+}

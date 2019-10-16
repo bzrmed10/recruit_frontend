@@ -19,6 +19,8 @@
     "@angular/platform-browser": "~8.2.3",
     "@angular/platform-browser-dynamic": "~8.2.3",
     "@angular/router": "~8.2.3",
+    "@ckeditor/ckeditor5-angular": "^1.1.0",
+    "@ckeditor/ckeditor5-build-classic": "^12.4.0",
     "ng-angular8-datatable": "^0.9.11",
     "rxjs": "~6.4.0",
     "sweetalert2": "^8.18.3",

@@ -73,8 +73,8 @@ export class ManagersEditComponent implements OnInit {
     this.managerForm = new FormGroup ({
       'firstName' : new FormControl(firstName , Validators.required),
       'lastName' : new FormControl(lastName, Validators.required),
-      'email' : new FormControl(email, Validators.required),
-      'phone' : new FormControl(phone , Validators.required),
+      'email' : new FormControl(email,[ Validators.required,Validators.email]),
+      'phone' : new FormControl(phone , [ Validators.required ,Validators.minLength(10)]),
       'status' : new FormControl(status, Validators.required),
       'departement' : new FormControl(departement, Validators.required)
     
