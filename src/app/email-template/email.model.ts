@@ -1,3 +1,3 @@
 export class Email {
-    constructor ( public type : string , public subject : string , public emailBody : string ){}
+    constructor ( public type : number , public subject : string , public emailBody : string ){}
 }

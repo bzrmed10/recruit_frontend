@@ -75,10 +75,79 @@ table.dataTable {
 .card {
     box-shadow: none;
 }
+   
+
+  .transparent{
+    background-color: transparent;
+}
+.card-header {
+    background-color: white;
+    border-left: 4px solid;
+    border-bottom:none;
+    height: 50px;
+    border-left-color: thistle;;
+    
+}
+thead {
+    background-color: whitesmoke;
+}
+
+table {
+    clear: both;
+    max-width: none !important;
+    border-collapse: separate !important;
+    border-spacing: 0 11px;
+    border: none;
+}
+table tbody tr{
+    
+    box-shadow: 0 1px 2.94px 1.06px rgba(4,26,55,.16);
+    border-radius: 5px;
+    position: relative;
+    background-color: white;
+}
+
+
+.table td, .table th {
+    padding: 18px;
+    vertical-align: top;
+    border-top: none;
+}
 .card:hover {
     box-shadow: 0 0 25px -5px #9e9c9e;
  
 }
+
+table tbody tr:hover {
+    box-shadow: 0 0 6px 0 #4099ff;
+}
+.btn-success {
+    color: #fff;
+    background-color: #2ed8b6;
+    border-color: #2ed8b6;
+}
+.btn-success:hover {
+    color: #fff;
+    background-color: #2ab196;
+    border-color: #2ab196;
+}
+
+.btn-danger {
+    color: #fff;
+    background-color: #ff5370;
+    border-color: #ff5370;
+}
+
+table tbody tr .btn {
+    border-radius: 50%;
+    margin: 0 3px;
+    width: 35px;
+    height: 35px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
 td>i.glyph-icon {
     margin-left: 5PX;
     margin-right: 5px;

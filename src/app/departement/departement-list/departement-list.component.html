@@ -9,7 +9,8 @@
     <tbody>
     <tr *ngFor="let dep of departements , let i = index">                            
           <td><i class="glyph-icon simple-icon-pencil color-green" [routerLink]="[i,'edit']"></i>   
-            <i class="glyph-icon simple-icon-trash color-red" (click)="onDeleteDepartement(i)"></i></td>
+            <i class="glyph-icon simple-icon-trash color-red" (click)="onDeleteDepartement(i)"></i>
+         </td>
           <td>{{ dep.nameDep }}</td>
           <td><small class="badge badge-primary"><i class="far fa-user"></i> {{ dep.nbEmploye }}</small></td>
        </tr>
