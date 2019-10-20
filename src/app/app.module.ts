@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import {NgbPaginationModule} from '@ng-bootstrap/ng-bootstrap';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,6 +24,9 @@ import { DepartementListComponent } from './departement/departement-list/departe
 import { DepartementEditComponent } from './departement/departement-edit/departement-edit.component';
 import { ManagersListComponent } from './managers/managers-list/managers-list.component';
 import { ManagersEditComponent } from './managers/managers-edit/managers-edit.component';
+import { DetailPositionComponent } from './positions/detail-position/detail-position.component';
+import { EditPositionComponent } from './positions/edit-position/edit-position.component';
+import { ListPositionComponent } from './positions/list-position/list-position.component';
 
 
 @NgModule({
@@ -43,14 +48,20 @@ import { ManagersEditComponent } from './managers/managers-edit/managers-edit.co
     DepartementListComponent,
     DepartementEditComponent,
     ManagersListComponent,
-    ManagersEditComponent
+    ManagersEditComponent,
+    DetailPositionComponent,
+    EditPositionComponent,
+    ListPositionComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    CKEditorModule
+    CKEditorModule,
+    NgbPaginationModule,
+    Ng2SearchPipeModule
+    
     
   ],
   providers: [],

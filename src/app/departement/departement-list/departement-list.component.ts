@@ -11,7 +11,9 @@ import { SharedService } from 'src/app/components/shared/shared.service';
 export class DepartementListComponent implements OnInit {
 
   departements : Departement[];
-   
+  page = 1;
+  pageSize = 10;
+  searchText;
   editMode : boolean;
   constructor(private departementService : DepartementService,
     private sharedSercice : SharedService) { }

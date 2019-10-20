@@ -1,0 +1,41 @@
+.proj-t-card .pt-badge {
+    margin-bottom: 0;
+    display: inline-block;
+    padding: 60px 50px 20px 20px;
+    border-radius: 50%;
+    position: absolute;
+    top: -45px;
+    right: -35px;
+    transition: all .3s ease-in-out;
+}
+.badge-light-success {
+    background: rgba(46,216,182,.2);
+    border-color: #c4f4eb;
+    color: #2ed8b6;
+}
+
+.m-b-30 {
+    margin-bottom: 30px;
+}
+
+.align-items-center {
+    align-items: center!important;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.text-c-green {
+    color: #2ed8b6;
+}
+.f-30 {
+    font-size: 30px;
+}
+
+.fa, .fas {
+    font-weight: 900;
+}

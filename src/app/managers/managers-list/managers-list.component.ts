@@ -15,6 +15,11 @@ export class ManagersListComponent implements OnInit {
 
   managers : Manager[];
   departement : Departement[];
+  page = 1;
+  pageSize = 2;
+  searchText;
+
+  
   constructor( private managerService : ManagerService, private sharedSercice : SharedService, private departementService : DepartementService) { }
 
   ngOnInit() {

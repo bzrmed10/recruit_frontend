@@ -1,3 +1,8 @@
+<div class="col-md-3 float-right">
+   <input class="form-control" type="text" name="search" 
+   [(ngModel)]="searchText" placeholder="Search"
+   >
+ </div>
 <table id="departement" class="table table">
     <thead>
        <tr>
@@ -7,7 +12,9 @@
        </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let dep of departements , let i = index">                            
+    <tr *ngFor="let dep of departements | filter:searchText
+               | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize,
+                let i = index">                            
           <td><i class="glyph-icon simple-icon-pencil color-green" [routerLink]="[i,'edit']"></i>   
             <i class="glyph-icon simple-icon-trash color-red" (click)="onDeleteDepartement(i)"></i>
          </td>
@@ -16,3 +23,8 @@
        </tr>
     </tbody>
  </table>
+ <ngb-pagination
+  [(page)]="page"
+  [pageSize]="pageSize"
+  [collectionSize]="departements.length">
+</ngb-pagination>

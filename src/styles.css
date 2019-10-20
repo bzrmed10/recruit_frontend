@@ -1,68 +1,4 @@
- /* tr.even {
-    height: 80px;
-    border: initial;
-    background: #fff;
-    border-radius: calc(.15rem - 1px);
-    box-shadow: 0 1px 15px rgba(0,0,0,.04), 0 1px 6px rgba(0,0,0,.04);
-    
-}
-tr.odd {
-    height: 80px;
-    border: initial;
-    background: #fff;
-    border-radius: calc(.15rem - 1px);
-    box-shadow: 0 1px 15px rgba(0,0,0,.04), 0 1px 6px rgba(0,0,0,.04);
-    
-}
 
-.table td, .table th {
-    padding: 1.75rem;
-    vertical-align: top;
-    border-top: 1px solid #dee2e6;
-}
-table.dataTable {
-    clear: both;
-    margin-top: 6px !important;
-    margin-bottom: 6px !important;
-    max-width: none !important;
-    border-collapse: separate !important;
-    border-spacing: 0 15px;
-}
-.dataTables_wrapper table thead{
-    display:none;
-}  */
-
-/*
-table.dataTable {
-    clear: both;
-    margin-top: 6px !important;
-    margin-bottom: 6px !important;
-    max-width: none !important;
-    border-collapse: separate !important;
-    border-spacing: 0 15px;
-}
-
-
-
-
-.pagination > li > a, .pagination > li > span {
-    background-color: transparent;
-    border-radius: 50%;
-    margin-left: 5px;
-    margin-right: 5px;
-    color: #145388;
-}
-
-.page-item.active .page-link {
-    z-index: 1;
-    border-color: #145388;
-    border-radius: 50%;
-}
-
-
-.dataTables_wrapper table thead{
-    display:none;
-} */
 
 .container-fluid {
     width: 100%;
@@ -74,22 +10,26 @@ table.dataTable {
 
 .card {
     box-shadow: none;
+
 }
-   
+   .card.purple{
+    border-left: 4px solid;
+    border-left-color: #e0dcff;
+   }
 
   .transparent{
     background-color: transparent;
 }
 .card-header {
     background-color: white;
-    border-left: 4px solid;
+    /* border-left: 4px solid; */
     border-bottom:none;
     height: 50px;
-    border-left-color: thistle;;
-    
+    /* border-left-color: #e0dcff; */
 }
 thead {
-    background-color: whitesmoke;
+    background-color: #e0dcff;
+    color: #5052a7
 }
 
 table {
@@ -180,8 +120,8 @@ td>i.glyph-icon {
     color:#ffb64d;
 }
 .badge-primary {
-    color: #fff;
-    background-color: #6d85dcd4;
+    color: #5052a7;
+    background-color: #e0dcff;
 }
 
 .control-sidebar-dark {
@@ -273,10 +213,10 @@ i.nav-icon.glyph-icon.iconsmind-Power-2.text-danger{
 }
 
 
-.main-sidebar, .main-sidebar::before {
+/* .main-sidebar, .main-sidebar::before {
     
     width: 260px;
-}
+} */
 
 .nav {
     flex-wrap: unset;
@@ -286,3 +226,4 @@ i.nav-icon.glyph-icon.iconsmind-Power-2.text-danger{
 .ck-editor__editable_inline {
     min-height: 300px;
 }
+
