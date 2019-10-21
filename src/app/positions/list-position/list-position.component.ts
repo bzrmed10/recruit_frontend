@@ -1,4 +1,6 @@
+import { PositionService } from '../position.service';
 import { Component, OnInit } from '@angular/core';
+import { JobPosition } from '../position.model';
 
 @Component({
   selector: 'app-list-position',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListPositionComponent implements OnInit {
 
-  constructor() { }
+  jobPositions:JobPosition[];
+  constructor( private jobPositionService : PositionService) { }
 
   ngOnInit() {
+      this.jobPositions = this.jobPositionService.getJobPosition();
   }
 
 }

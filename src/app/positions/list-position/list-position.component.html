@@ -1,1 +1,31 @@
-<p>list-position works!</p>
+
+    <div class="col-md-12" *ngFor="let job of jobPositions">
+        <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">{{ job.title}}</h3>
+              <div class="card-tools">
+                <!-- Buttons, labels, and many other things can be placed here! -->
+                <!-- Here is a label for example -->
+                <span class="badge badge-primary"> Departement : {{ job.departement }}</span>
+              </div>
+              <!-- /.card-tools -->
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+                <label for="">Job Position Description : </label> {{job.salary}} <br>
+                {{ job.description }}
+                <br>
+                <label for="">Salary : </label> {{job.salary}} <br>
+                <label for="">Location : </label> {{job.location}}
+            </div>
+            <!-- /.card-body -->
+            <div class="card-footer">
+              
+            </div>
+            <!-- /.card-footer -->
+          </div>
+          <!-- /.card -->
+    </div>
+    
+
+
