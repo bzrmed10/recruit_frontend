@@ -1,40 +1,60 @@
-<div class="card">
-        <div class="card-header">
-          <h3 class="card-title">Add New Job position</h3>
+<form [formGroup] ="jobPositionForm" (ngSubmit)="onSubmit()" >
+  <div class="card">
+    <div class="card-header">
+      <h3 class="card-title">Add New Job position</h3>
 
-          <div class="card-tools">
-            
-          </div>
-        </div>
+      <div class="card-tools">
         
-        <div class="card-body">
-                <div class="form-group">
-                        <label for="departement">Departement</label>
-                        <select class="form-control custom-select" id="departement">
-                          <option selected disabled>Select Departement</option>
-                          <option [value]="departement.nameDep" *ngFor="let departement of departements ;let i = index">{{ departement.nameDep }}</option>
-                        </select>
-                      </div>
-          <div class="form-group">
-            <label for="jobTitle">Job Title</label>
-            <input type="text" id="jobTitle" class="form-control">
-          </div>
-          <div class="form-group">
-            <label for="jobDescription">Job Description</label>
-            <textarea id="jobDescription" class="form-control" rows="6"></textarea>
-          </div>
- 
-          <div class="form-group">
-            <label for="salary">Salary</label>
-            <input type="text" id="salary" class="form-control">
-          </div>
-          <div class="form-group">
-            <label for="officeLocation">Office Location</label>
-            <input type="text" id="officeLocation" class="form-control">
-          </div>
-          <div class="col-md-12">
-            <button class="form-control btn-dark" type="submit"><i class="fas fa-plus"></i>{{ editMode ? ' Edit' : ' Add'}}</button>
-        </div>
-        </div>
-        <!-- /.card-body -->
       </div>
+    </div>
+    
+    <div class="card-body">
+            <div class="form-group">
+                    <label for="departement">Departement</label>
+                    <select class="form-control custom-select" 
+                    id="departement"
+                    formControlName="departement">
+                      <option selected disabled value="">Select Departement</option>
+                      <option [value]="departement.nameDep" *ngFor="let departement of departements ;let i = index">{{ departement.nameDep }}</option>
+                    </select>
+                  </div>
+      <div class="form-group">
+        <label for="jobTitle">Job Title</label>
+        <input 
+        type="text" 
+        id="jobTitle" 
+        class="form-control"
+        formControlName="title">
+      </div>
+      <div class="form-group">
+        <label for="jobDescription">Job Description</label>
+        <textarea 
+        id="jobDescription" 
+        class="form-control" 
+        rows="6"
+        formControlName="description"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="salary">Salary</label>
+        <input 
+        type="text" 
+        id="salary" 
+        class="form-control"
+        formControlName="salary">
+      </div>
+      <div class="form-group">
+        <label for="officeLocation">Office Location</label>
+        <input 
+        type="text" 
+        id="officeLocation" 
+        class="form-control"
+        formControlName="location">
+      </div>
+      <div class="col-md-12">
+        <button class="form-control btn-dark" type="submit"><i class="fas fa-plus"></i>{{ editMode ? ' Edit' : ' Add'}}</button>
+    </div>
+    </div>
+    <!-- /.card-body -->
+  </div>
+</form>

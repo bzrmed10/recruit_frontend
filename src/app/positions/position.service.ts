@@ -39,6 +39,7 @@ export class PositionService {
   }
 
   addJobPosition(jobPosition : JobPosition){
+    console.log(jobPosition);
     this.jobPositions.push(jobPosition);
   }
   editJobPosition(id : number,newJobPosition : JobPosition){
