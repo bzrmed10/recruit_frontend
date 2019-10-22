@@ -27,10 +27,12 @@ export class ManagersEditComponent implements OnInit {
   ngOnInit() {
      
       this.departements = this.departementService.getDepartement();
+     
       this.route.params.subscribe(
         (params :Params) => {
           this.id = +params['id'];
           this.editMode = params['id'] != null;
+          
           this.initForm();
           
         }

@@ -3,8 +3,8 @@
     <div class="card-header">
       <h3 class="card-title">Add New Job position</h3>
 
-      <div class="card-tools">
-        
+      <div class="card-tools">         
+              <a class="glyph-icon simple-icon-plus color-blue class-options" *ngIf="editMode" (click)="resetJobPositionForm()"></a>         
       </div>
     </div>
     
@@ -13,7 +13,8 @@
                     <label for="departement">Departement</label>
                     <select class="form-control custom-select" 
                     id="departement"
-                    formControlName="departement">
+                    formControlName="departement"
+                    [ngClass]="{'is-invalid': jobPositionForm.controls.departement.invalid &&  jobPositionForm.controls.departement.touched}">
                       <option selected disabled value="">Select Departement</option>
                       <option [value]="departement.nameDep" *ngFor="let departement of departements ;let i = index">{{ departement.nameDep }}</option>
                     </select>
@@ -24,7 +25,8 @@
         type="text" 
         id="jobTitle" 
         class="form-control"
-        formControlName="title">
+        formControlName="title"
+        [ngClass]="{'is-invalid': jobPositionForm.controls.title.invalid &&  jobPositionForm.controls.title.touched}">
       </div>
       <div class="form-group">
         <label for="jobDescription">Job Description</label>
@@ -32,7 +34,8 @@
         id="jobDescription" 
         class="form-control" 
         rows="6"
-        formControlName="description"></textarea>
+        formControlName="description"
+        [ngClass]="{'is-invalid': jobPositionForm.controls.description.invalid &&  jobPositionForm.controls.description.touched}"></textarea>
       </div>
 
       <div class="form-group">
@@ -41,7 +44,8 @@
         type="text" 
         id="salary" 
         class="form-control"
-        formControlName="salary">
+        formControlName="salary"
+        [ngClass]="{'is-invalid': jobPositionForm.controls.salary.invalid &&  jobPositionForm.controls.salary.touched}">
       </div>
       <div class="form-group">
         <label for="officeLocation">Office Location</label>
@@ -49,10 +53,16 @@
         type="text" 
         id="officeLocation" 
         class="form-control"
-        formControlName="location">
+        formControlName="location"
+        [ngClass]="{'is-invalid': jobPositionForm.controls.location.invalid &&  jobPositionForm.controls.location.touched}">
       </div>
       <div class="col-md-12">
-        <button class="form-control btn-dark" type="submit"><i class="fas fa-plus"></i>{{ editMode ? ' Edit' : ' Add'}}</button>
+        <button 
+        class="form-control btn-dark" 
+        type="submit"
+        
+        >
+        <i class="fas fa-plus"></i>{{ editMode ? ' Edit' : ' Add'}}</button>
     </div>
     </div>
     <!-- /.card-body -->

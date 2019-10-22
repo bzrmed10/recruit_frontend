@@ -122,6 +122,7 @@ td>i.glyph-icon {
 .badge-primary {
     color: #5052a7;
     background-color: #e0dcff;
+    font-size: 13px;
 }
 
 .control-sidebar-dark {
@@ -138,11 +139,13 @@ i.fas.glyph-icon {
     background: rgba(46,216,182,.2);
     border-color: #c4f4eb;
     color: #2ed8b6;
+    font-size: 13px;
 }
 .badge-light-danger{
     background: rgba(255,83,112,.2);
     border-color: #ffcfd7;
-    color: #ff5370
+    color: #ff5370;
+    font-size: 13px;
 }
 .glyph-icon.iconsmind-Phone-2 {
     font-size: 23px;
@@ -227,3 +230,16 @@ i.nav-icon.glyph-icon.iconsmind-Power-2.text-danger{
     min-height: 300px;
 }
 
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0;
+}
+@media (min-width: 768px){
+    .col-md-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+        float: right;
+    }
+}

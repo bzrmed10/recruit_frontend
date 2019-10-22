@@ -1,10 +1,13 @@
 import { Injectable } from '@angular/core';
 import { JobPosition } from './position.model';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PositionService {
+
+  startedEditing = new Subject<number>();
   private jobPositions : JobPosition[] = [
     new JobPosition(
       "Développeur Angular ",

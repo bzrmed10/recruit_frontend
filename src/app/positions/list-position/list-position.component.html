@@ -1,8 +1,18 @@
-
-    <div class="col-md-12" *ngFor="let job of jobPositions">
-        <div class="card">
+<div class="col-md-12">
+  <div class="card">
+  
+        <div class="input-group">
+            <input type="search" placeholder="Search" class="form-control" aria-label="Search" [(ngModel)]="searchText">
+            <div class="input-group-append">
+              <span class="input-group-text"><i class="fas fa-search"></i></span>
+            </div>
+          </div>
+  </div>
+</div>
+    <div class="col-md-6 col-sm-12" *ngFor="let job of jobPositions| filter:searchText , let i = index">
+        <div class="card" >
             <div class="card-header">
-              <h3 class="card-title">{{ job.title}}</h3>
+              <h3 class="card-title">{{ job.title | summary : 26}}</h3>
               <div class="card-tools">
                 <!-- Buttons, labels, and many other things can be placed here! -->
                 <!-- Here is a label for example -->
@@ -12,20 +22,23 @@
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-                <label for="">Job Position Description : </label> <br>
-                {{ job.description }}
+                <label for=""><span class="glyph-icon iconsmind-Letter-Open"></span> Job Position Description : </label>
+                {{ job.description | summary : 65}}
                 <br>
-                <label for="">Salary : </label> {{job.salary}} <br>
-                <label for="">Location : </label> {{job.location}}
+                <label for=""> <span class="glyph-icon iconsmind-Euro-Sign"></span>
+                  Salary : </label> {{job.salary}} <br>
+                <label for=""><span class="glyph-icon iconsmind-Location-2"></span>
+                 Location : </label> {{job.location}}
             </div>
             <!-- /.card-body -->
             <div class="card-footer">
-              
+                <button type="button" class="btn btn-block btn-outline-secondary btn-sm"  (click)="onEdit(i)">Edit</button>
             </div>
             <!-- /.card-footer -->
           </div>
           <!-- /.card -->
+        
     </div>
-    
+  
 
 

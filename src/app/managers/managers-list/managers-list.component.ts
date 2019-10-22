@@ -16,7 +16,7 @@ export class ManagersListComponent implements OnInit {
   managers : Manager[];
   departement : Departement[];
   page = 1;
-  pageSize = 2;
+  pageSize = 10;
   searchText;
 
   
@@ -28,7 +28,7 @@ export class ManagersListComponent implements OnInit {
   }
 
   onDeleteManager(id : number){
-    console.log(id);
+    
     this.managerService.deleteManager(id);
     this.sharedSercice.successToast('successful deletion');
   }

@@ -27,6 +27,7 @@ import { ManagersEditComponent } from './managers/managers-edit/managers-edit.co
 import { DetailPositionComponent } from './positions/detail-position/detail-position.component';
 import { EditPositionComponent } from './positions/edit-position/edit-position.component';
 import { ListPositionComponent } from './positions/list-position/list-position.component';
+import { SummaryPipe } from './pipes/summary.pipe';
 
 
 @NgModule({
@@ -51,7 +52,8 @@ import { ListPositionComponent } from './positions/list-position/list-position.c
     ManagersEditComponent,
     DetailPositionComponent,
     EditPositionComponent,
-    ListPositionComponent
+    ListPositionComponent,
+    SummaryPipe
   ],
   imports: [
     BrowserModule,

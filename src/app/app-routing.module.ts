@@ -11,6 +11,7 @@ import { DepartementListComponent } from './departement/departement-list/departe
 import { DepartementEditComponent } from './departement/departement-edit/departement-edit.component';
 import { ManagersListComponent } from './managers/managers-list/managers-list.component';
 import { ManagersEditComponent } from './managers/managers-edit/managers-edit.component';
+import { EditPositionComponent } from './positions/edit-position/edit-position.component';
 
 
 const routes: Routes = [
@@ -29,7 +30,7 @@ const routes: Routes = [
     {path:'new' , component : ManagersEditComponent },
     {path:':id/edit' , component : ManagersEditComponent}
 ]},
-  { path: 'positions' , component: PositionsComponent },
+  { path: 'positions' , component: PositionsComponent},
   { path: 'emailTemplate' , component: EmailTemplateComponent }
 ];
 

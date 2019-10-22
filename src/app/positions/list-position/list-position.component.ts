@@ -10,10 +10,15 @@ import { JobPosition } from '../position.model';
 export class ListPositionComponent implements OnInit {
 
   jobPositions:JobPosition[];
+  page = 1;
+  pageSize = 6;
+  searchText;
   constructor( private jobPositionService : PositionService) { }
 
   ngOnInit() {
       this.jobPositions = this.jobPositionService.getJobPosition();
   }
-
+  onEdit(i : number){
+     this.jobPositionService.startedEditing.next(i);
+  }
 }
