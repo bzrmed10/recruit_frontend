@@ -147,6 +147,13 @@ i.fas.glyph-icon {
     color: #ff5370;
     font-size: 13px;
 }
+
+.badge-light-gray {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: #4e4e4e;
+    color: #bfb9ba;
+    font-size: 13px;
+}
 .glyph-icon.iconsmind-Phone-2 {
     font-size: 23px;
 }
@@ -242,4 +249,8 @@ i.nav-icon.glyph-icon.iconsmind-Power-2.text-danger{
         max-width: 50%;
         float: right;
     }
+}
+
+.row.paginate{
+    width: 100%;
 }

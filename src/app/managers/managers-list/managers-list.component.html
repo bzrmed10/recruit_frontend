@@ -16,8 +16,7 @@
            </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let manager of managers | filter:searchText
-        | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize,
+        <tr *ngFor="let manager of managers | filter:searchText | paginate: {itemsPerPage : pageSize , currentPage:page},
          let i = index">                            
               <td><i class="glyph-icon simple-icon-pencil color-green" [routerLink]="[i,'edit']"></i>   
                 <i class="glyph-icon simple-icon-trash color-red" (click)="onDeleteManager(i)"></i></td>
@@ -33,8 +32,4 @@
            </tr>
         </tbody>
      </table>
-     <ngb-pagination
-         [(page)]="page"
-         [pageSize]="pageSize"
-         [collectionSize]="managers.length">
-         </ngb-pagination>
+  <pagination-controls (pageChange)="page = $event"></pagination-controls>

@@ -7,12 +7,15 @@
               <span class="input-group-text"><i class="fas fa-search"></i></span>
             </div>
           </div>
+          
   </div>
 </div>
-    <div class="col-md-6 col-sm-12" *ngFor="let job of jobPositions| filter:searchText , let i = index">
+    <div class="col-md-6 col-sm-12" *ngFor="let job of jobPositions| filter:searchText | paginate: {itemsPerPage : pageSize , currentPage:page}, let i = index">
         <div class="card" >
             <div class="card-header">
-              <h3 class="card-title">{{ job.title | summary : 26}}</h3>
+              <h3 class="card-title" *ngIf="job.title.length <= 20;else elseBlock">{{ job.title }}</h3>
+              <ng-template #elseBlock><h3 class="card-title" *ngIf="job.title.length > 20">{{ job.title | summary : 18 }}</h3></ng-template>
+              
               <div class="card-tools">
                 <!-- Buttons, labels, and many other things can be placed here! -->
                 <!-- Here is a label for example -->
@@ -22,8 +25,8 @@
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-                <label for=""><span class="glyph-icon iconsmind-Letter-Open"></span> Job Position Description : </label>
-                {{ job.description | summary : 65}}
+                <label for=""><span class="glyph-icon iconsmind-Letter-Open"></span> Job Description : </label>
+                {{ job.description | summary : 20}}
                 <br>
                 <label for=""> <span class="glyph-icon iconsmind-Euro-Sign"></span>
                   Salary : </label> {{job.salary}} <br>
@@ -32,13 +35,26 @@
             </div>
             <!-- /.card-body -->
             <div class="card-footer">
-                <button type="button" class="btn btn-block btn-outline-secondary btn-sm"  (click)="onEdit(i)">Edit</button>
+              <div class="row">
+                <div class="col-md-6">
+                    <small class="badge-light-gray"><i class="glyph-icon iconsmind-Over-Time"></i> {{ job.updateDate | date : 'MMM d, y, h:mm:ss a'}}</small>
+                </div>
+                <div class="col-md-6">
+                    <button type="button" class="btn btn-block btn-outline-secondary btn-sm"  (click)="onEdit(i)">Edit</button>
+                </div>
+              </div>            
             </div>
             <!-- /.card-footer -->
           </div>
           <!-- /.card -->
         
     </div>
-  
 
+      
+    <div class="row paginate">
+      <pagination-controls (pageChange)="page = $event"></pagination-controls>
+    </div>          
+
+            
+  
 

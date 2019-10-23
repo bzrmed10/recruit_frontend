@@ -62,7 +62,7 @@
         type="submit"
         
         >
-        <i class="fas fa-plus"></i>{{ editMode ? ' Edit' : ' Add'}}</button>
+        <i class="fas" [ngClass]="{'fa-plus': !editMode , 'fa-pen' : editMode}"></i>{{ editMode ? ' Edit' : ' Add'}}</button>
     </div>
     </div>
     <!-- /.card-body -->

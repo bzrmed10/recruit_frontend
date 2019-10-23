@@ -8,6 +8,8 @@ import { Subject } from 'rxjs';
 export class PositionService {
 
   startedEditing = new Subject<number>();
+  dateoftoday : Date  = new Date();
+
   private jobPositions : JobPosition[] = [
     new JobPosition(
       "Développeur Angular ",
@@ -20,7 +22,7 @@ export class PositionService {
       
       "Analyser les besoins"+
       "Développement d'applications HTML5/CSS3 avec les Framework ANGULAR et les librairies Material Design.",
-      "CDI: 37-45K€","Paris (75)","It"),
+      "CDI: 37-45K€","Paris (75)","It",this.dateoftoday),
       new JobPosition(
         "Développeur Angular ",
         "Pour les passionnés du domaine bancaire, nous recrutons notre amazing Développeur Angular (H/F)"+
@@ -32,7 +34,7 @@ export class PositionService {
         
         "Analyser les besoins"+
         "Développement d'applications HTML5/CSS3 avec les Framework ANGULAR et les librairies Material Design.",
-        "CDI: 37-45K€","Paris (75)","It")
+        "CDI: 37-45K€","Paris (75)","It",this.dateoftoday)
   ]
 
   constructor() { }
@@ -42,10 +44,13 @@ export class PositionService {
   }
 
   addJobPosition(jobPosition : JobPosition){
-    console.log(jobPosition);
+    const creatDate : Date  = new Date();
+    jobPosition.updateDate = creatDate;
     this.jobPositions.push(jobPosition);
   }
   editJobPosition(id : number,newJobPosition : JobPosition){
+    const updateDate : Date  = new Date();
+    newJobPosition.updateDate = updateDate;
     this.jobPositions[id] = newJobPosition;
   
   }
