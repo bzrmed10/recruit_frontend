@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import dayGridPlugin from '@fullcalendar/daygrid';
 
 @Component({
   selector: 'app-appointment',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppointmentComponent implements OnInit {
   title = 'Appointment';
+  calendarPlugins = [dayGridPlugin]; 
   constructor() { }
 
   ngOnInit() {
