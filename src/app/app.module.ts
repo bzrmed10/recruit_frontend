@@ -5,7 +5,7 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import {NgbPaginationModule} from '@ng-bootstrap/ng-bootstrap';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { FullCalendarModule } from '@fullcalendar/angular';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -65,8 +65,7 @@ import { SummaryPipe } from './pipes/summary.pipe';
     CKEditorModule,
     NgbPaginationModule,
     Ng2SearchPipeModule,
-    NgxPaginationModule,
-    FullCalendarModule
+    NgxPaginationModule
     
     
   ],

@@ -8,7 +8,7 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 })
 export class AppointmentComponent implements OnInit {
   title = 'Appointment';
-  calendarPlugins = [dayGridPlugin]; 
+  
   constructor() { }
 
   ngOnInit() {
