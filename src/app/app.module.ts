@@ -5,7 +5,7 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import {NgbPaginationModule} from '@ng-bootstrap/ng-bootstrap';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NgxPaginationModule } from 'ngx-pagination';
-
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -30,6 +30,9 @@ import { DetailPositionComponent } from './positions/detail-position/detail-posi
 import { EditPositionComponent } from './positions/edit-position/edit-position.component';
 import { ListPositionComponent } from './positions/list-position/list-position.component';
 import { SummaryPipe } from './pipes/summary.pipe';
+import { RegisterComponent } from './register/register.component';
+import { RequestResetComponent } from './password-reset/request-reset/request-reset.component';
+import { ResponseResetComponent } from './password-reset/response-reset/response-reset.component';
 
 
 @NgModule({
@@ -55,18 +58,22 @@ import { SummaryPipe } from './pipes/summary.pipe';
     DetailPositionComponent,
     EditPositionComponent,
     ListPositionComponent,
-    SummaryPipe
+    SummaryPipe,
+    RegisterComponent,
+    RequestResetComponent,
+    ResponseResetComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     CKEditorModule,
     NgbPaginationModule,
     Ng2SearchPipeModule,
-    NgxPaginationModule
-    
+    NgxPaginationModule,
+
     
   ],
   providers: [],

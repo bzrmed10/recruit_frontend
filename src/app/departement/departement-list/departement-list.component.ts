@@ -15,17 +15,41 @@ export class DepartementListComponent implements OnInit {
   pageSize = 10;
   searchText;
   editMode : boolean;
+  collectionSize : number;
   constructor(private departementService : DepartementService,
     private sharedSercice : SharedService) { }
 
   ngOnInit() {
-    this.departements = this.departementService.getDepartement();
+    // this.departements = this.departementService.getDepartement();
+    this.departementService.getDepartementApi().subscribe((data: Departement[])=>{
+    this.departements = data['data'];
+    this.collectionSize = this.departements.length;
+    // console.log(this.departements.length);
+    return this.departements;
+
+    })  ;
     
   }
 
   onDeleteDepartement(id : number){
     
-    this.departementService.deleteDepartement(id);
-    this.sharedSercice.successToast('successful deletion');
+    this.departementService.deleteDepartementApi(id).subscribe(
+      result => {
+        this.sharedSercice.successToast('successful deletion');
+        this.ngOnInit();
+      },
+      error => {
+        this.sharedSercice.errorToast(error.error['error']);
+        console.log(error.error['error']);
+
+      },
+      () => {
+        // 'onCompleted' callback.
+        // No errors, route to new page here
+      }
+      
+      )  ;
+
+    
   }
 }

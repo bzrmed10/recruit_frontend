@@ -23,69 +23,69 @@ export class EditPositionComponent implements OnInit,OnDestroy {
      private router :Router) { }
 
   ngOnInit() {
-    this.departements = this.departementService.getDepartement();
-    this.initForm();
-    this.subscription = this.jobPositionService.startedEditing.
-    subscribe(
-      (index : number) =>{
-          this.id = index;
-          this.editMode = true;   
-          console.log(this.editMode);
-          this.initForm();   
-      }
-    )
+    // this.departements = this.departementService.getDepartement();
+    // this.initForm();
+    // this.subscription = this.jobPositionService.startedEditing.
+    // subscribe(
+    //   (index : number) =>{
+    //       this.id = index;
+    //       this.editMode = true;   
+    //       console.log(this.editMode);
+    //       this.initForm();   
+    //   }
+    // )
     
   }
 
   onSubmit(){
-    if(this.jobPositionForm.valid){
-      if(this.editMode){
-        this.jobPositionService.editJobPosition(this.id,this.jobPositionForm.value);
+    // if(this.jobPositionForm.valid){
+    //   if(this.editMode){
+    //     this.jobPositionService.editJobPosition(this.id,this.jobPositionForm.value);
        
-        //this.sharedService.successToast('Successful Insertion');
-      }else{
-        this.jobPositionService.addJobPosition(this.jobPositionForm.value);
-        this.jobPositionForm.reset();
-        // this.jobPositionService.successToast('Successful Update');
-      }
-    }
+    //     //this.sharedService.successToast('Successful Insertion');
+    //   }else{
+    //     this.jobPositionService.addJobPosition(this.jobPositionForm.value);
+    //     this.jobPositionForm.reset();
+    //     // this.jobPositionService.successToast('Successful Update');
+    //   }
+    // }
     
   }
 
-  private initForm(){ 
+  // private initForm(){ 
     
-    let dep ='';
-    let title ='';
-    let jobDescription ='';
-    let salary = '';
-    let officeLocation = '';
+  //   let dep ='';
+  //   let title ='';
+  //   let jobDescription ='';
+  //   let salary = '';
+  //   let officeLocation = '';
     
 
-    if(this.editMode){
-       const jobPosition = this.jobPositionService.getJobPositionById(this.id);
-       dep = jobPosition.departement;
-       title = jobPosition.title;
-       jobDescription = jobPosition.description;
-       salary = jobPosition.salary;
-       officeLocation = jobPosition.location;
+  //   if(this.editMode){
+  //      const jobPosition = this.jobPositionService.getJobPositionById(this.id);
+  //      dep = jobPosition.departement;
+  //      title = jobPosition.title;
+  //      jobDescription = jobPosition.description;
+  //      salary = jobPosition.salary;
+  //      officeLocation = jobPosition.location;
        
-    }
+  //   }
 
     
-    this.jobPositionForm = new FormGroup ({
-      'departement' : new FormControl(dep , Validators.required),
-      'title' : new FormControl(title, Validators.required),
-      'description' : new FormControl(jobDescription, Validators.required),
-      'salary' : new FormControl(salary , Validators.required ),
-      'location' : new FormControl(officeLocation, Validators.required)
+  //   this.jobPositionForm = new FormGroup ({
+  //     'departement' : new FormControl(dep , Validators.required),
+  //     'title' : new FormControl(title, Validators.required),
+  //     'description' : new FormControl(jobDescription, Validators.required),
+  //     'salary' : new FormControl(salary , Validators.required ),
+  //     'location' : new FormControl(officeLocation, Validators.required)
     
-    });
-  }
-  resetJobPositionForm(){
-    this.jobPositionForm.reset();
-    this.editMode= false;
-  }
+  //   });
+  // }
+  // resetJobPositionForm(){
+  //   this.jobPositionForm.reset();
+  //   this.editMode= false;
+  // }
   ngOnDestroy(){
-    this.subscription.unsubscribe();
+    // this.subscription.unsubscribe();
   }
 }

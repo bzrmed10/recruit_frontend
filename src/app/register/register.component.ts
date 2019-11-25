@@ -1,39 +1,40 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import { LoginServiceService } from './login-service.service';
+import { RegisterService } from './register.service';
 import { TokenService } from '../services/token.service';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css']
 })
-export class LoginComponent implements OnInit {
+export class RegisterComponent implements OnInit {
 
-  public testerror = null;
-  constructor(private loginService :LoginServiceService ,
-                private token :TokenService ,
-                private router:Router,
-                private auth:AuthService) { }
+  public error = [];
+  constructor(private registerService :RegisterService ,
+    private token :TokenService ,
+    private router:Router,
+    private auth : AuthService) { }
 
   ngOnInit() {
-
   }
+
   onSubmit(form : NgForm){
 
     if(form.valid){
       
-      this.loginService.login(form.value).subscribe(
+      this.registerService.register(form.value).subscribe(
         data => {
-          this.hundleResponse(data);
-          console.log(data);
+          this.hundleResponse(data)
         },
         error => {
-          this.testerror = error.error["error"];
-
+          this.error = error.error["error"];
+         
+          
+  
         }
         
         )  ;
@@ -41,7 +42,7 @@ export class LoginComponent implements OnInit {
     }
     else{
       
-      this.testerror = "Invalid form";
+      //this.error = "Invalid form";
 
     }
   }
@@ -51,6 +52,4 @@ export class LoginComponent implements OnInit {
     this.auth.changeAuthStatus(true);
     this.router.navigateByUrl('/dashboard');
   }
-
- 
 }

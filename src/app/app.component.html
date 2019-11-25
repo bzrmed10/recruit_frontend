@@ -1,5 +1,15 @@
-<app-header></app-header>
-<app-menu></app-menu>
-<app-settings></app-settings>
-<app-content></app-content>
-<app-footer></app-footer>
+
+<div *ngIf="isLoggedIn; else loggedOut">
+    <app-header></app-header>
+    <app-menu></app-menu>
+    <app-settings></app-settings>
+    <app-content></app-content>
+    <app-footer></app-footer>
+  </div>
+  
+  <ng-template #loggedOut>
+      <router-outlet></router-outlet>
+  </ng-template>
+
+
+  

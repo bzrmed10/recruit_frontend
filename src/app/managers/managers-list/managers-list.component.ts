@@ -13,23 +13,23 @@ import { Departement } from 'src/app/departement/departement.model';
 })
 export class ManagersListComponent implements OnInit {
 
-  managers : Manager[];
-  departement : Departement[];
-  page = 1;
-  pageSize = 10;
-  searchText;
+  // managers : Manager[];
+  // departement : Departement[];
+  // page = 1;
+  // pageSize = 10;
+  // searchText;
 
   
   constructor( private managerService : ManagerService, private sharedSercice : SharedService, private departementService : DepartementService) { }
 
   ngOnInit() {
-      this.managers = this.managerService.getManagers();
-      this.departement = this.departementService.getDepartement();
+      // this.managers = this.managerService.getManagers();
+      // this.departement = this.departementService.getDepartement();
   }
 
   onDeleteManager(id : number){
     
-    this.managerService.deleteManager(id);
-    this.sharedSercice.successToast('successful deletion');
+    // this.managerService.deleteManager(id);
+    // this.sharedSercice.successToast('successful deletion');
   }
 }

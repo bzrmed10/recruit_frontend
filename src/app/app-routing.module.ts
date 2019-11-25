@@ -12,26 +12,70 @@ import { DepartementEditComponent } from './departement/departement-edit/departe
 import { ManagersListComponent } from './managers/managers-list/managers-list.component';
 import { ManagersEditComponent } from './managers/managers-edit/managers-edit.component';
 import { EditPositionComponent } from './positions/edit-position/edit-position.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { ResponseResetComponent } from './password-reset/response-reset/response-reset.component';
+import { RequestResetComponent } from './password-reset/request-reset/request-reset.component';
+import { BeforeLoginService } from './services/before-login.service';
+import { AfterLoginService } from './services/after-login.service';
 
 
 const routes: Routes = [
 
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-  { path: 'dashboard', component : DashboardComponent },
-  { path: 'appointment' , component: AppointmentComponent },
-  { path: 'recuteProcess' , component: RecuteProcessComponent },
-  { path: 'departement' , component: DepartementComponent ,children : [
+  { path: '', redirectTo: '/login',  pathMatch: 'full' },
+ 
+  { 
+    path: 'login',
+    component : LoginComponent ,
+    canActivate : [BeforeLoginService] 
+  },
+  { 
+    path: 'register',
+   component : RegisterComponent,
+   canActivate : [BeforeLoginService] 
+  },
+  { path: 'request-password-reset', component : RequestResetComponent },
+  { path: 'response-password-reset', component : ResponseResetComponent },
+  { 
+    path: 'dashboard', 
+    component : DashboardComponent,
+    canActivate : [AfterLoginService] 
+  },
+  { path: 'appointment' , 
+  component: AppointmentComponent ,
+  canActivate : [AfterLoginService]  
+},
+  { path: 'recuteProcess' , 
+  component: RecuteProcessComponent ,
+  canActivate : [AfterLoginService]  
+},
+  { path: 'departement' , 
+  component: DepartementComponent ,
+  canActivate : [AfterLoginService] ,
+  children : [
     {path:'' , component : DepartementListComponent },
     {path:'new' , component : DepartementEditComponent },
     {path:':id/edit' , component : DepartementEditComponent}
 ]},
-  { path: 'managers' , component: ManagersComponent ,children : [
+  { 
+    path: 'managers' , 
+    component: ManagersComponent ,
+    canActivate : [AfterLoginService] ,
+    children : [
     {path:'' , component : ManagersListComponent },
     {path:'new' , component : ManagersEditComponent },
     {path:':id/edit' , component : ManagersEditComponent}
 ]},
-  { path: 'positions' , component: PositionsComponent},
-  { path: 'emailTemplate' , component: EmailTemplateComponent }
+  { 
+    path: 'positions' , 
+    component: PositionsComponent,
+    canActivate : [AfterLoginService]
+},
+  { 
+    path: 'emailTemplate' , 
+    component: EmailTemplateComponent ,
+    canActivate : [AfterLoginService] 
+  }
 ];
 
 @NgModule({

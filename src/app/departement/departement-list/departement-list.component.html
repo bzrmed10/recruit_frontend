@@ -15,16 +15,16 @@
     <tr *ngFor="let dep of departements | filter:searchText
                | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize,
                 let i = index">                            
-          <td><i class="glyph-icon simple-icon-pencil color-green" [routerLink]="[i,'edit']"></i>   
-            <i class="glyph-icon simple-icon-trash color-red" (click)="onDeleteDepartement(i)"></i>
+          <td><i class="glyph-icon simple-icon-pencil color-green" [routerLink]="[dep.id,'edit']"></i> 
+             <i class="glyph-icon simple-icon-trash color-red" (click)="onDeleteDepartement(dep.id)"></i> 
          </td>
-          <td>{{ dep.nameDep }}</td>
-          <td><small class="badge badge-primary"><i class="far fa-user"></i> {{ dep.nbEmploye }}</small></td>
+          <td>{{ dep.name }}</td>
+          <td><small class="badge badge-primary"><i class="far fa-user"></i> {{ dep.nbEmployee }}</small></td>
        </tr>
     </tbody>
  </table>
  <ngb-pagination
   [(page)]="page"
   [pageSize]="pageSize"
-  [collectionSize]="departements.length">
+  [collectionSize]="collectionSize">
 </ngb-pagination>

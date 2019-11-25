@@ -14,70 +14,70 @@ import { SharedService } from 'src/app/components/shared/shared.service';
 })
 export class DepartementEditComponent implements OnInit {
 
-  @ViewChild('f' , {static : true}) depForm : NgForm;
+//   @ViewChild('f' , {static : true}) depForm : NgForm;
   
-  id: number;
-  editMode=false
+//   id: number;
+//   editMode=false
   
   constructor(private route : ActivatedRoute,
     private departementService : DepartementService,
     private router : Router,
     private sharedService : SharedService) { }
 
-  ngOnInit() {
+   ngOnInit() {
 
     
-    this.route.params.subscribe(
-      (params :Params) => {
-        this.id = +params['id'];
-        this.editMode = params['id'] != null; 
+//     this.route.params.subscribe(
+//       (params :Params) => {
+//         this.id = +params['id'];
+//         this.editMode = params['id'] != null; 
         
-        this.initForm();        
-      }
-    );
+//         this.initForm();        
+//       }
+//     );
 
 
-  }
+   }
 
-  onSubmit(form : NgForm){
+//   onSubmit(form : NgForm){
       
        
-      if(!this.editMode){
-        //console.log(form.value);
-         this.departementService.addDepartement(form.value);
-          this.router.navigate(['departement']);
-         this.sharedService.successToast('Successful Insertion');
+//       if(!this.editMode){
+//         //console.log(form.value);
+//          this.departementService.addDepartement(form.value);
+//           this.router.navigate(['departement']);
+//          this.sharedService.successToast('Successful Insertion');
           
           
-      }else{
-        this.departementService.editDepartement(this.id,form.value);
-        this.router.navigate(['departement']);
-        this.sharedService.successToast('Successful Update');
+//       }else{
+//         this.departementService.editDepartement(this.id,form.value);
+//         this.router.navigate(['departement']);
+//         this.sharedService.successToast('Successful Update');
 
 
-      }
+//       }
       
-  }
+//   }
 
-  private initForm(){ 
-    let nameDep ='';
-    let nbEmploye : number;
+//   private initForm(){ 
+//     let nameDep ='';
+//     let nbEmploye : number;
    
 
-    if(this.editMode){
-       const editedDepartement =  this.departementService.getDepartementById(this.id);
-       nameDep = editedDepartement.nameDep;
-       nbEmploye = editedDepartement.nbEmploye;
-       setTimeout(() => {
-        this.depForm.setValue({
-          nameDep : nameDep,
-          nbEmploye : nbEmploye
-     })
+//     if(this.editMode){
+//        const editedDepartement =  this.departementService.getDepartementById(this.id);
+//        nameDep = editedDepartement.nameDep;
+//        nbEmploye = editedDepartement.nbEmploye;
+//        setTimeout(() => {
+//         this.depForm.setValue({
+//           nameDep : nameDep,
+//           nbEmploye : nbEmploye
+//      })
     
-      });
+//       });
 
     
-  }
-}
+//   }
+// }
 
 }

@@ -15,24 +15,24 @@ export class ManagerService {
   ];
   constructor() { }
 
-  getManagers(){
-    return this.managers;
-  }
+  // getManagers(){
+  //   return this.managers;
+  // }
 
-  addManager(manager : Manager){
-    console.log(manager);
-    this.managers.push(manager);
-  }
-  editManager(id : number,newManager : Manager){
-    this.managers[id] = newManager;
+  // addManager(manager : Manager){
+  //   console.log(manager);
+  //   this.managers.push(manager);
+  // }
+  // editManager(id : number,newManager : Manager){
+  //   this.managers[id] = newManager;
   
-  }
+  // }
   
-  deleteManager(id : number){
-    this.managers.splice(id,1);
-  }
-  getManagerById(index : number){
-    return this.managers[index];
-  }
+  // deleteManager(id : number){
+  //   this.managers.splice(id,1);
+  // }
+  // getManagerById(index : number){
+  //   return this.managers[index];
+  // }
 
 }
