@@ -13,7 +13,7 @@ import { AuthService } from '../services/auth.service';
 })
 export class RegisterComponent implements OnInit {
 
-  public error = [];
+   error = [];
   constructor(private registerService :RegisterService ,
     private token :TokenService ,
     private router:Router,

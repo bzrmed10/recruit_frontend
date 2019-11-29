@@ -13,8 +13,8 @@
     </thead>
     <tbody>
     <tr *ngFor="let dep of departements | filter:searchText
-               | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize,
-                let i = index">                            
+               |  paginate: {itemsPerPage : pageSize , currentPage:page},
+               let i = index">                            
           <td><i class="glyph-icon simple-icon-pencil color-green" [routerLink]="[dep.id,'edit']"></i> 
              <i class="glyph-icon simple-icon-trash color-red" (click)="onDeleteDepartement(dep.id)"></i> 
          </td>
@@ -23,8 +23,4 @@
        </tr>
     </tbody>
  </table>
- <ngb-pagination
-  [(page)]="page"
-  [pageSize]="pageSize"
-  [collectionSize]="collectionSize">
-</ngb-pagination>
+ <pagination-controls (pageChange)="page = $event"></pagination-controls>

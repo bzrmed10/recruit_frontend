@@ -1,4 +1,4 @@
-<!-- <div class="col-md-3 float-right">
+<div class="col-md-3 float-right">
    <input class="form-control" type="text" name="search" 
    [(ngModel)]="searchText" placeholder="Search"
    >
@@ -16,15 +16,14 @@
            </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let manager of managers | filter:searchText | paginate: {itemsPerPage : pageSize , currentPage:page},
-         let i = index">                            
-              <td><i class="glyph-icon simple-icon-pencil color-green" [routerLink]="[i,'edit']"></i>   
-                <i class="glyph-icon simple-icon-trash color-red" (click)="onDeleteManager(i)"></i></td>
+        <tr *ngFor="let manager of managers | filter:searchText | paginate: {itemsPerPage : pageSize , currentPage:page}">                            
+              <td><i class="glyph-icon simple-icon-pencil color-green" [routerLink]="[manager.id,'edit']"></i>   
+                <i class="glyph-icon simple-icon-trash color-red" (click)="onDeleteManager(manager.id)"></i></td>
               <td>{{ manager.firstName }}</td>
               <td>{{ manager.lastName }}</td>
               <td class="smallText">{{ manager.email }}</td>
               <td>{{ manager.phone }}</td>
-              <td>IT</td>
+              <td>{{ manager.departement_id }}</td>
               <td><small class="badge" 
                 [ngClass]="{'badge-light-success': manager.status =='Active', 
                             'badge-light-danger': manager.status =='Disabled'}">
@@ -32,4 +31,4 @@
            </tr>
         </tbody>
      </table>
-  <pagination-controls (pageChange)="page = $event"></pagination-controls> -->
+  <pagination-controls (pageChange)="page = $event"></pagination-controls>

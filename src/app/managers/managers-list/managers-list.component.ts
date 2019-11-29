@@ -13,17 +13,23 @@ import { Departement } from 'src/app/departement/departement.model';
 })
 export class ManagersListComponent implements OnInit {
 
-  // managers : Manager[];
+   managers : Manager[];
   // departement : Departement[];
-  // page = 1;
-  // pageSize = 10;
-  // searchText;
+  page = 1;
+  pageSize = 10;
+  searchText;
 
   
   constructor( private managerService : ManagerService, private sharedSercice : SharedService, private departementService : DepartementService) { }
 
   ngOnInit() {
-      // this.managers = this.managerService.getManagers();
+        this.managerService.getManagers().subscribe((data: Departement[])=>{
+        this.managers = data['data'];
+        //this.collectionSize = this.departements.length;
+        // console.log(this.departements.length);
+        return this.managers;
+    
+        })  
       // this.departement = this.departementService.getDepartement();
   }
 
@@ -31,5 +37,20 @@ export class ManagersListComponent implements OnInit {
     
     // this.managerService.deleteManager(id);
     // this.sharedSercice.successToast('successful deletion');
+
+
+    this.managerService.deleteManager(id).subscribe(
+      result => {
+        this.sharedSercice.successToast('successful deletion');
+        this.ngOnInit();
+      },
+      error => {
+        this.sharedSercice.errorToast(error.error['error']);
+        // console.log(error.error['error']);
+
+      }
+      
+      )  ;
+
   }
 }

@@ -28,11 +28,17 @@ export class DepartementService {
   // addDepartement(departement : Departement){
   //   this.departements.push(departement);
   // }
+   addDepartement(departement : Departement){
+    return this.http.post(this.REST_API_SERVER+'/departements',departement);
+  }
   // editDepartement(id : number,newDepartement : Departement){
   //   this.departements[id] = newDepartement;
   
   // }
+   editDepartement(id : number,newDepartement : Departement){
+    return this.http.put(this.REST_API_SERVER+'/departements/'+id,newDepartement);
   
+  }
   // deleteDepartement(id : number){
   //   this.departements.splice(id,1);
   // }
@@ -42,5 +48,9 @@ export class DepartementService {
   // getDepartementById(index : number){
   //   return this.departements[index];
   // }
+
+  getDepartementByIdApi(id : number){
+    return this.http.get(this.REST_API_SERVER+'/departements/'+id);
+  }
 
 }

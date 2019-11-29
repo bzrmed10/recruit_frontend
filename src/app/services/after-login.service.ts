@@ -9,6 +9,7 @@ import { TokenService } from './token.service';
 export class AfterLoginService implements CanActivate{
   canActivate(route: ActivatedRouteSnapshot,
    state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
+   
     return this.token.loggedIn();
   }
 

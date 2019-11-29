@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
       this.loginService.login(form.value).subscribe(
         data => {
           this.hundleResponse(data);
-          console.log(data);
+          // console.log(data);
         },
         error => {
           this.testerror = error.error["error"];

@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import { FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Params } from '@angular/router';
 import { FormGroup } from '@angular/forms';
+import { Manager } from '../manager.model';
 
 @Component({
   selector: 'app-managers-edit',
@@ -26,60 +27,91 @@ export class ManagersEditComponent implements OnInit {
 
   ngOnInit() {
      
-      // this.departements = this.departementService.getDepartement();
+    this.departementService.getDepartementApi().subscribe((data: Departement[])=>{
+      this.departements = data['data'];
+      return this.departements;
+  
+      }) ;
      
-      // this.route.params.subscribe(
-      //   (params :Params) => {
-      //     this.id = +params['id'];
-      //     this.editMode = params['id'] != null;
+      this.route.params.subscribe(
+        (params :Params) => {
+          this.id = +params['id'];
+          this.editMode = params['id'] != null;
+          this.initForm();
           
-      //     this.initForm();
-          
-      //   }
-      // );
+        }
+      );
   }
 
   onSubmit(){
-    // if(this.editMode){
-    //   this.managerService.editManager(this.id,this.managerForm.value);
-    //   this.router.navigate(['managers']);
-    //   this.sharedService.successToast('Successful Insertion');
-    // }else{
-    //   console.log(this.managerForm.value);
-    //   this.managerService.addManager(this.managerForm.value);
-    //   this.router.navigate(['managers']);
-    //   this.sharedService.successToast('Successful Update');
-    // }
+    if(this.editMode){
+     
+
+      this.managerService.editManager(this.id,this.managerForm.value).subscribe(
+        (data: Manager)=>{
+          this.router.navigate(['managers']);
+          this.sharedService.successToast('Successful Update');
+         },
+         error => {
+          
+           this.sharedService.errorToast('Error! :'+ error.error['error'] );
+         });
+    }else{
+      this.managerService.addManager(this.managerForm.value).subscribe(
+        (data: Manager)=>{
+          this.router.navigate(['managers']);
+          this.sharedService.successToast('Successful Insert');
+         },
+         error => {
+          
+           this.sharedService.errorToast('Error! :'+ error.error['error'] );
+         });
+    }
   }
  
-  // private initForm(){ 
-  //   let firstName ='';
-  //   let lastName ='';
-  //   let email ='';
-  //   let phone = '';
-  //   let status = '';
-  //   let departement = 100 ;
+   private initForm(){ 
+    let firstName ='';
+    let lastName ='';
+    let email ='';
+    let phone = '';
+    let status = '';
+    let departement_id = null ;
 
-  //   if(this.editMode){
-  //      const manager = this.managerService.getManagerById(this.id);
-  //      firstName =manager.firstName;
-  //      lastName =manager.lastName;
-  //      email =manager.email;
-  //      phone = manager.phone;
-  //      status = manager.status;
-  //      departement = 1;
+    if(this.editMode){
+       this.managerService.getManagerById(this.id).subscribe(
+         data => {
+           const manager = data['data'];
+           firstName =manager.firstName;
+           lastName =manager.lastName;
+           email =manager.email;
+           phone = manager.phone;
+           status = manager.status;
+           departement_id = manager.departement_id;
+           console.log(firstName);
+           this.managerForm = new FormGroup ({
+            'firstName' : new FormControl(firstName , Validators.required),
+            'lastName' : new FormControl(lastName, Validators.required),
+            'email' : new FormControl(email,[ Validators.required,Validators.email]),
+            'phone' : new FormControl(phone , [ Validators.required ,Validators.minLength(10)]),
+            'status' : new FormControl(status, Validators.required),
+            'departement_id' : new FormControl(departement_id, Validators.required)
+          
+          });
+         }
+       );
+      
        
-  //   }
+    }
 
     
-  //   this.managerForm = new FormGroup ({
-  //     'firstName' : new FormControl(firstName , Validators.required),
-  //     'lastName' : new FormControl(lastName, Validators.required),
-  //     'email' : new FormControl(email,[ Validators.required,Validators.email]),
-  //     'phone' : new FormControl(phone , [ Validators.required ,Validators.minLength(10)]),
-  //     'status' : new FormControl(status, Validators.required),
-  //     'departement' : new FormControl(departement, Validators.required)
+    this.managerForm = new FormGroup ({
+      'firstName' : new FormControl(firstName , Validators.required),
+      'lastName' : new FormControl(lastName, Validators.required),
+      'email' : new FormControl(email,[ Validators.required,Validators.email]),
+      'phone' : new FormControl(phone , [ Validators.required ,Validators.minLength(10)]),
+      'status' : new FormControl(status, Validators.required),
+      'departement_id' : new FormControl(departement_id, Validators.required)
     
-  //   });
-  // }
+    });
+   }
 }

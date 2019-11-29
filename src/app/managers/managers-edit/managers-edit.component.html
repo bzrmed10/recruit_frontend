@@ -1,4 +1,4 @@
-<!-- <form [formGroup] ="managerForm" (ngSubmit)="onSubmit()" >
+<form [formGroup] ="managerForm" (ngSubmit)="onSubmit()" >
 
         <div class="row">
             <div class="col-md-6 col-sm-12">
@@ -71,10 +71,10 @@
                     <select class="form-control" 
                             name="departement" 
                             id="departement" 
-                            formControlName="departement"
-                            [ngClass]="{'is-invalid': managerForm.controls.departement.invalid &&  managerForm.controls.departement.touched}">
+                            formControlName="departement_id"
+                            [ngClass]="{'is-invalid': managerForm.controls.departement_id.invalid &&  managerForm.controls.departement_id.touched}">
                             <option value="100" disabled selected>choose Departement</option>    
-                        <option [value]="i" *ngFor="let departement of departements ;let i = index">{{ departement.nameDep }}</option>
+                        <option [value]="departement.id" *ngFor="let departement of departements ">{{ departement.name }}</option>
                             
                         </select>
                         
@@ -108,4 +108,4 @@
         </div>
 
         
-    </form> -->
+    </form>

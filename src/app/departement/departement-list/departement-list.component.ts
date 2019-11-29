@@ -15,7 +15,7 @@ export class DepartementListComponent implements OnInit {
   pageSize = 10;
   searchText;
   editMode : boolean;
-  collectionSize : number;
+  // collectionSize : number;
   constructor(private departementService : DepartementService,
     private sharedSercice : SharedService) { }
 
@@ -23,7 +23,7 @@ export class DepartementListComponent implements OnInit {
     // this.departements = this.departementService.getDepartement();
     this.departementService.getDepartementApi().subscribe((data: Departement[])=>{
     this.departements = data['data'];
-    this.collectionSize = this.departements.length;
+    // this.collectionSize = this.departements.length;
     // console.log(this.departements.length);
     return this.departements;
 
@@ -42,10 +42,6 @@ export class DepartementListComponent implements OnInit {
         this.sharedSercice.errorToast(error.error['error']);
         console.log(error.error['error']);
 
-      },
-      () => {
-        // 'onCompleted' callback.
-        // No errors, route to new page here
       }
       
       )  ;
