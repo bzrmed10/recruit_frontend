@@ -10,7 +10,7 @@
           
   </div>
 </div>
-    <div class="col-md-6 col-sm-12" *ngFor="let job of jobPositions| filter:searchText | paginate: {itemsPerPage : pageSize , currentPage:page}, let i = index">
+    <div class="col-md-6 col-sm-12" *ngFor="let job of jobPositions| filter:searchText | paginate: {itemsPerPage : pageSize , currentPage:page}">
         <div class="card" >
             <div class="card-header">
               <h3 class="card-title" *ngIf="job.title.length <= 20;else elseBlock">{{ job.title }}</h3>
@@ -19,7 +19,7 @@
               <div class="card-tools">
                 <!-- Buttons, labels, and many other things can be placed here! -->
                 <!-- Here is a label for example -->
-                <span class="badge badge-primary"> Departement : {{ job.departement }}</span>
+                <span class="badge badge-primary"> Departement : {{ job.departement_id }}</span>
               </div>
               <!-- /.card-tools -->
             </div>
@@ -29,7 +29,7 @@
                 {{ job.description | summary : 20}}
                 <br>
                 <label for=""> <span class="glyph-icon iconsmind-Euro-Sign"></span>
-                  Salary : </label> {{job.salary}} <br>
+                  Salary : </label> {{job.salary}} $ <br>
                 <label for=""><span class="glyph-icon iconsmind-Location-2"></span>
                  Location : </label> {{job.location}}
             </div>
@@ -37,10 +37,10 @@
             <div class="card-footer">
               <div class="row">
                 <div class="col-md-6">
-                    <small class="badge-light-gray"><i class="glyph-icon iconsmind-Over-Time"></i> {{ job.updateDate | date : 'MMM d, y, h:mm:ss a'}}</small>
+                    <small class="badge-light-gray"><i class="glyph-icon iconsmind-Over-Time"></i> {{ job.updated_at | date : 'MMM d, y, h:mm:ss a'}}</small>
                 </div>
                 <div class="col-md-6">
-                    <button type="button" class="btn btn-block btn-outline-secondary btn-sm"  (click)="onEdit(i)">Edit</button>
+                    <button type="button" class="btn btn-block btn-outline-secondary btn-sm"  (click)="onEdit(job.id)">Edit</button>
                 </div>
               </div>            
             </div>

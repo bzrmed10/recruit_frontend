@@ -1,4 +1,4 @@
-<!-- <form [formGroup] ="jobPositionForm" (ngSubmit)="onSubmit()" >
+<form [formGroup] ="jobPositionForm" (ngSubmit)="onSubmit()" >
   <div class="card">
     <div class="card-header">
       <h3 class="card-title">Add New Job position</h3>
@@ -13,10 +13,10 @@
                     <label for="departement">Departement</label>
                     <select class="form-control custom-select" 
                     id="departement"
-                    formControlName="departement"
-                    [ngClass]="{'is-invalid': jobPositionForm.controls.departement.invalid &&  jobPositionForm.controls.departement.touched}">
+                    formControlName="departement_id"
+                    [ngClass]="{'is-invalid': jobPositionForm.controls.departement_id.invalid &&  jobPositionForm.controls.departement_id.touched}">
                       <option selected disabled value="">Select Departement</option>
-                      <option [value]="departement.nameDep" *ngFor="let departement of departements ;let i = index">{{ departement.nameDep }}</option>
+                      <option [value]="departement.id" *ngFor="let departement of departements">{{ departement.name }}</option>
                     </select>
                   </div>
       <div class="form-group">
@@ -67,4 +67,4 @@
     </div>
     
   </div>
-</form> -->
+</form>
